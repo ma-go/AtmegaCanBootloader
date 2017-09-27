@@ -2,6 +2,7 @@
 
 import threading
 import Queue
+import time
 
 import uspp.uspp as serial
 import message_dispatcher as dispatcher
@@ -71,6 +72,7 @@ class SerialInterface:
 	
 	def send(self, message):
 		"""Send a message"""
+		time.sleep(.001)
 		self._interface.write(self._encode(message))
 	
 	def get(self, block = True, timeout = None):
@@ -78,6 +80,7 @@ class SerialInterface:
 		
 		Wait for a new message if there is no one in the queue and "block"
 		is set True."""
+		time.sleep(.001)
 		return self.__receiveQueue.get(block, timeout)
 	
 	
