@@ -431,9 +431,9 @@ class Bootloader:
 							print "Warning: Wrong message number detected (board says %x, I have %x)" % (response_msg.number, message.number)
 							
 							# reset message number only if we just started the communication
-							if message.number == 0:
-								self.msg_number = response_msg.number
-								message.number = self.msg_number
+							# if message.number == 0:
+							self.msg_number = response_msg.number
+							message.number = self.msg_number
 							
 							# wait a bit for other error message
 							time.sleep(0.1)
