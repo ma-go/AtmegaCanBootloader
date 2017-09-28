@@ -52,6 +52,9 @@
 
 #include "utils.h"
 
+#define MCP2515_BITRATE 125
+#define MCP2515_CLOCK 16
+
 #include "defaults.h"
 #include "mcp2515.h"
 #include "mcp2515_defs.h"

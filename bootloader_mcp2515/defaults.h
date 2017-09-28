@@ -31,7 +31,7 @@
 // ----------------------------------------------------------------------------
 
 #ifndef	DEFAULTS_H
-#define	DEFAULTS_H
+	#define	DEFAULTS_H
 
 #include "config.h"
 #include "mcp2515.h"
@@ -102,6 +102,10 @@
 
 #ifndef	MCP2515_BITRATE
 	#define	MCP2515_BITRATE		125
+#endif
+
+#ifndef	MCP2515_CLOCK
+	#define	MCP2515_CLOCK	16
 #endif
 
 #ifndef	MCP2515_INTERRUPTS
@@ -217,6 +221,9 @@
 #elif F_CPU == 20000000UL
 	#define	TIMER_PRESCALER		(1<<CS12)|(1<<CS10)		// Prescaler = 1024
 	#define	TIMER_PRELOAD		55770
+#elif F_CPU == 12000000UL
+	#define	TIMER_PRESCALER		(1<<CS12)|(1<<CS10)		// Prescaler = 1024
+	#define	TIMER_PRELOAD		59677
 #else
 	#error	choosen F_CPU not supported yet!
 #endif
@@ -290,27 +297,58 @@
 
 #ifndef	MCP2515_BITRATE
 	#error	MCP2515_BITRATE not defined!
+#endif
+#ifndef	MCP2515_CLOCK
+	#error	MCP2515_CLOCK not defined!
 #else
 	#if	MCP2515_BITRATE == 125
-		// 125 kbps
-		#define	R_CNF3	((1<<PHSEG21))
-		#define	R_CNF2	((1<<BTLMODE)|(1<<PHSEG11))
-		#define	R_CNF1	((1<<BRP2)|(1<<BRP1)|(1<<BRP0))
+		#if	MCP2515_CLOCK == 16
+			#define	R_CNF3	((1<<PHSEG21))
+			#define	R_CNF2	((1<<BTLMODE)|(1<<PHSEG11))
+			#define	R_CNF1	((1<<BRP2)|(1<<BRP1)|(1<<BRP0))
+		#elif MCP2515_CLOCK == 8
+			#define	R_CNF3	(0x85)
+			#define	R_CNF2	(0xB1)
+			#define	R_CNF1	(0x01)
+		#else
+			#error invalid value for MCP2515_CLOCK
+		#endif
 	#elif MCP2515_BITRATE == 250
-		// 250 kbps
-		#define	R_CNF3	((1<<PHSEG21))
-		#define	R_CNF2	((1<<BTLMODE)|(1<<PHSEG11))
-		#define	R_CNF1	((1<<BRP1)|(1<<BRP0))
+		#if	MCP2515_CLOCK == 16
+			#define	R_CNF3	((1<<PHSEG21))
+			#define	R_CNF2	((1<<BTLMODE)|(1<<PHSEG11))
+			#define	R_CNF1	((1<<BRP1)|(1<<BRP0))
+		#elif MCP2515_CLOCK == 8
+			#define	R_CNF3	(0x85)
+			#define	R_CNF2	(0xB1)
+			#define	R_CNF1	(0x00)
+		#else
+			#error invalid value for MCP2515_CLOCK
+		#endif
 	#elif MCP2515_BITRATE == 500
-		// 500 kbps
-		#define	R_CNF3	((1<<PHSEG21))
-		#define	R_CNF2	((1<<BTLMODE)|(1<<PHSEG11))
-		#define	R_CNF1	((1<<BRP0))
+		#if	MCP2515_CLOCK == 16
+			#define	R_CNF3	((1<<PHSEG21))
+			#define	R_CNF2	((1<<BTLMODE)|(1<<PHSEG11))
+			#define	R_CNF1	((1<<BRP0))
+		#elif MCP2515_CLOCK == 8
+			#define	R_CNF3	(0x82)
+			#define	R_CNF2	(0x90)
+			#define	R_CNF1	(0x00)
+		#else
+			#error invalid value for MCP2515_CLOCK
+		#endif
 	#elif MCP2515_BITRATE == 1000
-		// 1 Mbps
-		#define	R_CNF3	((1<<PHSEG21))
-		#define	R_CNF2	((1<<BTLMODE)|(1<<PHSEG11))
-		#define	R_CNF1	(0)
+		#if	MCP2515_CLOCK == 16
+			#define	R_CNF3	((1<<PHSEG21))
+			#define	R_CNF2	((1<<BTLMODE)|(1<<PHSEG11))
+			#define	R_CNF1	(0)
+		#elif MCP2515_CLOCK == 8
+			#define	R_CNF3	(0x80)
+			#define	R_CNF2	(0x80)
+			#define	R_CNF1	(0x00)
+		#else
+			#error invalid value for MCP2515_CLOCK
+		#endif
 	#else
 		#error invalid value for MCP2515_BITRATE
 	#endif
