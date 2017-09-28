@@ -1,5 +1,7 @@
 CAN Bootloader
 
+Fork from: http://www.kreatives-chaos.com/artikel/can-bootloader
+
 Mit dem hier vorgestellten Bootloader lassen sich AVRs die an einem MCP2515 angeschlossen sind über den CAN Bus programmieren.
 
 Im Roboterclub verbauen wir eine ganze Menge AVRs, teilweise auch in den Tiefen des Roboters versteckt, so dass man nur sehr schwer mit einem Programmierkabel dorthin kommt. Allerdings haben sie einen CAN Anschluss. Die Idee war also einen Bootloader zu haben mit dem wir auch diese AVRs einfach per CAN programmieren zu können ohne extra Kabel nach außen zu legen und ohne jedesmal den halben Roboter zu zerlegen.
