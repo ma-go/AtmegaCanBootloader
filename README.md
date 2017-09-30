@@ -18,7 +18,7 @@ If you have an Atmega32 with an external crystal with an "high freq" (> 6MHz) th
     hfuse 0xDC
     lfuse 0x9E
 
-## Functional description Can-Bootloader ##:
+## Functional description Can-Bootloader: ##
 
 After a restart, the AVR waits 0.5s to receive a specific Can-Message from the corresponding python upload script. If the time is elapsed without this message, the Bootloader jumps to the address zero and starts therefore the normal application.
 
