@@ -16,4 +16,4 @@
 // CAN Settings
 
 #define	MCP2515_CS			B,4
-#define	MCP2515_INT			B,2
+#define	MCP2515_INT			D,2

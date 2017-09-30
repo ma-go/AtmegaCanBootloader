@@ -1,6 +1,6 @@
 # Hey Emacs, this is a -*- makefile -*-
 #----------------------------------------------------------------------------
-# WinAVR Makefile Template written by Eric B. Weddington, Jörg Wunsch, et al.
+# WinAVR Makefile Template written by Eric B. Weddington, Jï¿½rg Wunsch, et al.
 #
 # Released to the Public Domain
 #
@@ -43,21 +43,22 @@
 # MCU name
 #MCU = atmega8
 #MCU = atmega88
-MCU = atmega168
-MCU = atmega328p
+#MCU = atmega168
+#MCU = atmega328p
 #MCU = atmega16
-#MCU = atmega32
+MCU = atmega32
 #MCU = atmega644
 
 # Processor frequency.
 #F_CPU =  4000000
 #F_CPU =  7372800
 #F_CPU =  8000000
-F_CPU = 14745600
+#F_CPU = 14745600
 #F_CPU = 16000000
+F_CPU = 12000000
 
 # Bootloader address:
-BOOTLOADER_BOARD_ID = 0xff
+BOOTLOADER_BOARD_ID = 
 
 # Startaddress of the bootloader (512 words)
 #     ATMega8/88    => 0x1C00
