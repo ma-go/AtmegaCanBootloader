@@ -4,7 +4,7 @@
 
 #define	BOOTLOADER_TYPE		0
 
-#define	BOOT_LED			B,1
+#define	BOOT_LED			D,5
 
 //#define	BOOT_INIT
 //#define	BOOT_LED_SET_OUTPUT
@@ -17,3 +17,7 @@
 
 #define	MCP2515_CS			B,4
 #define	MCP2515_INT			D,2
+
+#define MCP2515_BITRATE 	125
+#define MCP2515_CLOCK 		8
+

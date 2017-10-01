@@ -105,7 +105,7 @@
 #endif
 
 #ifndef	MCP2515_CLOCK
-	#define	MCP2515_CLOCK	16
+	#define	MCP2515_CLOCK	8
 #endif
 
 #ifndef	MCP2515_INTERRUPTS
@@ -303,9 +303,9 @@
 #else
 	#if	MCP2515_BITRATE == 125
 		#if	MCP2515_CLOCK == 16
-			#define	R_CNF3	((1<<PHSEG21))
-			#define	R_CNF2	((1<<BTLMODE)|(1<<PHSEG11))
-			#define	R_CNF1	((1<<BRP2)|(1<<BRP1)|(1<<BRP0))
+			#define	R_CNF3	(0x86)//((1<<PHSEG21))
+			#define	R_CNF2	(0xF0)//((1<<BTLMODE)|(1<<PHSEG11))
+			#define	R_CNF1	(0x03)//((1<<BRP2)|(1<<BRP1)|(1<<BRP0))
 		#elif MCP2515_CLOCK == 8
 			#define	R_CNF3	(0x85)
 			#define	R_CNF2	(0xB1)

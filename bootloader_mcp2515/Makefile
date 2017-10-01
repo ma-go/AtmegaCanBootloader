@@ -54,11 +54,11 @@ MCU = atmega32
 #F_CPU =  7372800
 #F_CPU =  8000000
 #F_CPU = 14745600
-#F_CPU = 16000000
-F_CPU = 12000000
+F_CPU = 16000000
+#F_CPU = 12000000
 
 # Bootloader address:
-BOOTLOADER_BOARD_ID = 
+BOOTLOADER_BOARD_ID = 0x04
 
 # Startaddress of the bootloader (512 words)
 #     ATMega8/88    => 0x1C00
