@@ -4,7 +4,7 @@
 
 #define	BOOTLOADER_TYPE		0
 
-#define	BOOT_LED			D,5
+#define	BOOT_LED			B,5  // B,5 Nano
 
 //#define	BOOT_INIT
 //#define	BOOT_LED_SET_OUTPUT
@@ -15,7 +15,7 @@
 // ----------------------------------------------------------------------------
 // CAN Settings
 
-#define	MCP2515_CS			B,4
+#define	MCP2515_CS			B,2  // B,2 Nano  // B,4 Hap-CU
 #define	MCP2515_INT			D,2
 
 #define MCP2515_BITRATE 	125

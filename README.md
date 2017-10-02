@@ -13,10 +13,12 @@ Correspondingly the fuses from an Atmega32 with internal 8Mhz crystal have to be
     hfuse 0xDC
     lfuse 0x94
 
-If you have an Atmega32 with an external crystal with an "high freq" (> 6MHz) then you have to adopt the fuses regarding this Fuse [calculator](http://www.engbedded.com/fusecalc/) to:
+If you have an Atmega32 with an external crystal with an "high freq" (>= 8Mhz) then you have to adopt the fuses regarding this Fuse [calculator](http://www.engbedded.com/fusecalc/) to:
 
     hfuse 0xDC
     lfuse 0x9E
+
+If you're looking for an brief description about fuse settings, i recommend [this article](http://www.martyncurrey.com/arduino-atmega-328p-fuse-settings/). 
 
 ## Functional description Can-Bootloader: ##
 

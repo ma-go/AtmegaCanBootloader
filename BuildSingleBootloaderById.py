@@ -9,12 +9,13 @@ if int(id) < 15:
 else:
     id = hex(int(id))
 
-shutil.copytree("bootloader_mcp2515", "bootloader_atmega32_12Mhz_mcp2515_8MHz/ID_" + id)
+desFolder = "bootloader_atmega328p_16Mhz_mcp2515_8MHz_CS_B2"
+shutil.copytree("bootloader_mcp2515", desFolder + "/ID_" + id)
 
-for line in fileinput.input("bootloader_atmega32_12Mhz_mcp2515_8MHz/ID_" + id + "/Makefile", inplace = 1): 
+for line in fileinput.input(desFolder + "/ID_" + id + "/Makefile", inplace = 1): 
     print line.replace("BOOTLOADER_BOARD_ID = ", "BOOTLOADER_BOARD_ID = " + id),
 
-os.chdir("bootloader_atmega32_12Mhz_mcp2515_8MHz/ID_" + id)
+os.chdir(desFolder + "/ID_" + id)
 os.system("make clean")
 os.system("make all")
 os.chdir("..")
