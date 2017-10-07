@@ -22,7 +22,7 @@
 //#endif
 
 #include "mcp_can.h"
-#include "SoftwareSerial.h"
+//#include "SoftwareSerial.h"
 
 #define LW232_LAWICEL_VERSION_STR     "V1013"
 #define LW232_LAWICEL_SERIAL_NUM      "NA123"

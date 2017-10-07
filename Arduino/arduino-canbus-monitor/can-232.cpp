@@ -15,7 +15,7 @@
 #include "mcp_can.h"
 #include "can-232.h"
 
-#define LOGGING_ENABLED
+//#define LOGGING_ENABLED
 
 #ifdef LOGGING_ENABLED
 #define dbg_begin(x) debug.begin(x)
