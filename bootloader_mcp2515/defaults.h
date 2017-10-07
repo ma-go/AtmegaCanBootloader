@@ -301,8 +301,18 @@
 #ifndef	MCP2515_CLOCK
 	#error	MCP2515_CLOCK not defined!
 #else
-	#if	MCP2515_BITRATE == 125
+	#if	MCP2515_BITRATE == 10
 		#if	MCP2515_CLOCK == 16
+			#define	R_CNF3	(0x87)
+			#define	R_CNF2	(0xFF)
+			#define	R_CNF1	(0x1F)
+		#elif MCP2515_CLOCK == 8
+			#error Attention: TJA1050 did not support Bitrates below 20kbps
+		#else
+			#error invalid value for MCP2515_CLOCK
+		#endif
+	#elif MCP2515_BITRATE == 125
+		#if MCP2515_CLOCK == 16
 			#define	R_CNF3	(0x86)//((1<<PHSEG21))
 			#define	R_CNF2	(0xF0)//((1<<BTLMODE)|(1<<PHSEG11))
 			#define	R_CNF1	(0x03)//((1<<BRP2)|(1<<BRP1)|(1<<BRP0))
