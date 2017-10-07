@@ -33,7 +33,7 @@ The uploading PC-Software is written in Python.
 
 As interface from your PC to the CAN-Bus, you will need an USB-Can adapter.
 Because I have already bought some [Arduino Nanos ](https://store.arduino.cc/usa/arduino-nano) and besides some MCP2515 CAN-Bus Modules with addition TJA1050 Transceiver on board, i decide to build/flash me my own [CAN Debugger](http://www.kreatives-chaos.com/artikel/can_debugger).
-The regarding software from https://github.com/latonita/arduino-canbus-monitor with precompiled hex file can find in the Arduino folder under arduino-canbus-monitor. As you can see in the code, the CAN-Bus speed is set to 125kbps, and the Clock speed from the MCP2515 Board is 8MHz.
+The regarding software from https://github.com/latonita/arduino-canbus-monitor with precompiled hex file can be found in the Arduino folder under arduino-canbus-monitor. As you can see in the code, the CAN-Bus speed is set to 125kbps, the Clock speed from the MCP2515 Board is 8MHz, and the **C**hip**S**elect pin is D10.
 
 With your completed CAN-Debugger you can start downloading your first individual application to your decentralized microcontroller.
 
